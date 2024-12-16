@@ -1,0 +1,227 @@
+/* Logo */
+.logo-img {
+  width: 80px; /* Reduced size for the logo */
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.7) !important; /* Black with 70% opacity */
+}
+
+/* Landing Section */
+.landing-section {
+  position: relative;
+  min-height: 100vh; /* Make it fill the screen */
+  display: flex;
+  align-items: center; /* Vertically center the content */
+  justify-content: center;
+  color: #333; /* Darker text color (dark gray) */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Optional: add shadow for readability */
+  text-decoration-color: var(--yellow); /* Accent color for text decoration */
+}
+
+/* Update animated text color */
+.animated-title, .animated-subtitle, .animated-description, .animated-btn {
+  color: #333; /* Darker text color */
+}
+
+/* Accent yellow for certain text */
+.animated-title, .animated-subtitle {
+  color: #ffcc00; /* Yellow color for title and subtitle */
+}
+
+/* Button with yellow background */
+.animated-btn {
+  background-color: #ffcc00; /* Yellow background for the button */
+  color: #f6f0f0; /* Dark text color */
+  animation-name: fadeIn;
+  animation-delay: 1s;
+  transition: background-color 0.3s;
+}
+
+.animated-btn:hover {
+  background-color: #ff6f61; /* Hover effect on button */
+  color: white; /* White text on hover */
+}
+
+/* Additional yellow accent styling */
+.landing-section h1, .landing-section h2 {
+  color: #ffcc00; /* Yellow text for headers */
+}
+
+/* Text inside the landing section (description and button) */
+.landing-section .lead {
+  color: #dddddd; /* Darker shade for readability */
+}
+
+/* Square div with 70% opacity black background */
+.square-overlay {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.7); /* 70% black background with opacity */
+  width: 100%; /* Full width of the column */
+  height: 400px; /* Set height to create a square shape */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 10px; /* Optional: rounded corners for the square */
+}
+
+/* Text styling inside the square */
+.square-overlay h1, .square-overlay p, .square-overlay a {
+  color: white; /* White text for contrast */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Text shadow for readability */
+}
+
+/* Adjusting button styles */
+.square-overlay .animated-btn {
+  background-color: #ffcc00; /* Yellow button background */
+  color: #333; /* Dark text color */
+}
+
+.square-overlay .animated-btn:hover {
+  background-color: #ff6f61; /* Hover effect on button */
+  color: white; /* White text on hover */
+}
+
+/* Meet the Team Section */
+.meet-team {
+  background-color: #f8f9fa;
+  padding: 5rem 0;
+}
+
+.meet-team h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.team-member img:hover {
+  transform: scale(1.1);
+}
+
+.team-member h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+.team-member p {
+  font-size: 1rem;
+  color: #777;
+}
+
+/* Sponsors Section */
+.sponsors {
+  display: flex;
+  justify-content: center; /* Center the logos */
+  gap: 20px; /* Space between logos */
+  flex-wrap: wrap; /* Allow logos to wrap on smaller screens */
+  margin-top: 20px;
+}
+
+.sponsor-img {
+  width: 90px; /* Set a fixed width for the sponsor logos */
+  height: auto; /* Keep the aspect ratio of the logos */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.sponsor-img:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+@media (max-width: 768px) {
+  .sponsor-img {
+    width: 150px; /* Adjust the size on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .sponsor-img {
+    width: 150px; /* Further reduce the size on very small screens */
+  }
+}
+
+/* Apply animation */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animated-title, .animated-subtitle, .animated-description, .animated-btn {
+  opacity: 0;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.animated-title {
+  animation-name: fadeIn;
+  animation-delay: 0.3s;
+}
+
+.animated-subtitle {
+  animation-name: fadeIn;
+  animation-delay: 0.5s;
+}
+
+.animated-description {
+  animation-name: fadeIn;
+  animation-delay: 0.7s;
+}
+
+.animated-btn {
+  animation-name: fadeIn;
+  animation-delay: 1s;
+  transition: background-color 0.3s;
+}
+
+.animated-btn:hover {
+  background-color: #ff6f61; /* Hover effect on button */
+}
+
+/* Styling for large screens */
+@media (min-width: 768px) {
+  .landing-section {
+    background-size: cover; /* Ensure the background image stretches fully */
+    background-position: center center;
+  }
+
+  .landing-section h1 {
+    font-size: 3.5rem; /* Larger title for bigger screens */
+  }
+
+  .landing-section h2 {
+    font-size: 2rem; /* Smaller subtitle */
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .landing-section h1 {
+    font-size: 2.5rem; /* Adjust size for smaller screens */
+  }
+
+  .landing-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .landing-section .lead {
+    font-size: 1rem; /* Ensure readability */
+  }
+
+  .landing-section .btn {
+    font-size: 1.1rem; /* Increase button size for better interaction */
+  }
+}

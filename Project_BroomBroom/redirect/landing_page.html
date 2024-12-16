@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BroomBroom - Modern Landing Page</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/CSS/landingpage.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target=".navbar">
+
+    <!-- Home Section with Video Background -->
+    <div class="home">
+        <video autoplay loop muted playsinline class="bg-video">
+            <source src="/Project_BroomBroom/Video/neo-retro-motorcycle-moewalls-com.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/Project_BroomBroom/redirect/AboutUs.html">
+                    <img src="/img/imgs/download.png" alt="BroomBroom Logo" class="img-fluid logo-img" />
+                    BroomBroom
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Project_BroomBroom/HTML/website.html">Official Website</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Project_BroomBroom/redirect/signup.html">Sign Up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Project_BroomBroom/redirect/signin.html">Sign In</a>
+                        </li>
+                    </ul>
+            </nav>
+
+        <!-- Home Section Content -->
+        <div class="home__container">
+            <div class="home__data text-center">
+                <h1 class="home__title display-4">Ride<br> For Greatness</h1>
+                <p class="home__description lead">Speed is the Key<br> Go for Greatness!</p>
+                <a href="/Project_BroomBroom/redirect/signup.html" class="btn btn-light home__button btn-lg">Get Started</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="/JS/java.js"></script>
+</body>
+</html>

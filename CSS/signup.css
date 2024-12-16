@@ -1,0 +1,105 @@
+/* Body and HTML styling */
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  overflow-y: auto; /* Enable vertical scrolling if necessary */
+  flex-direction: column; /* Ensure elements stack vertically */
+}
+
+/* Background container */
+.bg-video-container {
+  position: relative;
+  height: 100%; /* Ensure the background container stretches full height */
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+  padding: 20px 0; /* Padding for spacing */
+  min-height: 100vh; /* Full height of the viewport */
+}
+
+/* Video styling */
+.bg-video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Card styling */
+.card {
+  position: relative;
+  z-index: 1;
+  max-width: 2000px; /* Max width for the card */
+  width: 100%; /* Full width based on max-width */
+  border-radius: 12px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  opacity: 0.9;
+  height: auto; /* Adapt height based on content */
+  padding: 1.5rem; /* Padding for card content */
+}
+
+/* Card body styling */
+.card-body {
+  padding: 1.5rem;
+  overflow-y: auto; /* Allow scrolling if content overflows */
+  max-height: 500px; /* Set a max-height for the card's body to allow scrolling */
+}
+
+/* Title styling */
+.section-title h1 {
+  font-size: 2.2rem; /* Slightly smaller heading */
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.section-title p {
+  font-size: 1rem;
+  color: #777;
+}
+
+/* Form control styling */
+.form-control {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* Button styling */
+.btn-minimalist {
+  padding: 1rem 2rem;
+  background-color: #d5eb0d;
+  color: white;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.btn-minimalist:hover {
+  background-color: #d5eb0d;
+}
+
+.gender-option {
+ color: white;
+}
+/* Radio button inline styling */
+.radio-inline {
+  margin-right: 15px;
+}
+
+/* Footer or link section styling */
+.login-link a {
+  text-decoration: none;
+  color: #fff7f7;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}

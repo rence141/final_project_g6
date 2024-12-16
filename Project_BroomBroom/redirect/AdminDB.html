@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+
+    <!-- Font Awesome CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Custom CSS file link -->
+    <link rel="stylesheet" href="/CSS/ManageProduct.css">
+</head>
+<body>
+
+    <!-- Messages Section -->
+    <div id="message-section">
+        <?php
+        if (isset($message)) {
+            foreach ($message as $msg) {
+                echo '<span class="message">' . $msg . '</span>';
+            }
+        }
+        ?>
+    </div>
+
+    <div class="container">
+
+        <!-- Product Add Form -->
+        <div class="admin-product-form-container">
+            <form action="admin_page.php" method="post" enctype="multipart/form-data">
+                <h3>Add a New Product</h3>
+                <input type="text" placeholder="Enter Product Name" name="product_name" class="box" required>
+                <textarea placeholder="Enter Product Description" name="product_description" class="box" required></textarea>
+                <input type="number" placeholder="Enter Product Price" name="product_price" class="box" required>
+                <input type="file" accept="image/png, image/jpeg, image/jpg" name="product_image" class="box" required>
+                <input type="submit" class="btn" name="add_product" value="Add Product">
+            </form>
+        </div>
+
+        <!-- Product Display Table -->
+        <div class="product-display">
+            <table class="product-display-table">
+                <thead>
+                    <tr>
+                        <th>Product Image</th>
+                        <th>Product Name</th>
+                        <th>Product Description</th>
+                        <th>Product Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $select = mysqli_query($conn, "SELECT * FROM items");
+                    while ($row = mysqli_fetch_assoc($select)) {
+                    ?>
+                    <tr>
+                        <td><img src="uploaded_img/<?php echo htmlspecialchars($row['ITEM_IMAGE']); ?>" height="100" alt="Product Image"></td>
+                        <td><?php echo htmlspecialchars($row['ITEM_NAME']); ?></td>
+                        <td><?php echo htmlspecialchars($row['ITEM_DESCRIPTION']); ?></td>
+                        <td>$<?php echo htmlspecialchars($row['ITEM_PRICE']); ?>/-</td>
+                        <td>
+                            <a href="admin_page.php?edit=<?php echo $row['id']; ?>" class="btn"> <i class="fas fa-edit"></i> Edit </a>
+                            <a href="admin_page.php?delete=<?php echo $row['id']; ?>" class="btn delete-btn"> <i class="fas fa-trash"></i> Delete </a>
+                        </td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+</html>

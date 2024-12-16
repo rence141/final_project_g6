@@ -1,0 +1,85 @@
+/* Body */
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg-video-container {
+  position: relative;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.bg-video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  margin-top: 30px;
+  max-width: 600px; /* Adjusted width for smaller card */
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  opacity: 0.9;
+  height: auto; /* Ensure the card's height adapts based on content */
+  max-height: 900px; /* Set a max height for the card */
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.card-body {
+  padding: 1.5rem; /* Reduced padding for a shorter card */
+  overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+.section-title h1 {
+  font-size: 2.2rem; /* Slightly smaller heading */
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.section-title p {
+  font-size: 1rem;
+  color: #777;
+}
+
+.form-control {
+  padding: 1rem;
+  margin-bottom: 1rem; /* Reduced margin between inputs */
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.btn-minimalist {
+  padding: 1rem 2rem;
+  background-color: #d5eb0d;
+  color: white;
+  border-radius: 7px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.btn-minimalist:hover {
+  background-color: #d5eb0d;
+}
+
+.radio-inline {
+  margin-right: 10px;
+}
+
+/* Additional styling for the footer or link section */
+.login-link a {
+  text-decoration: none;
+  color: #fff7f7;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}

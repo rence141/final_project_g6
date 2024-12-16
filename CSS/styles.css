@@ -1,0 +1,329 @@
+/* Website Styles */
+
+/*scroll limiter*/
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  background-color: #121212;
+}
+
+h1, h2, h4, h5 {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+  }
+  40% {
+      transform: translateY(-10px);
+  }
+  60% {
+      transform: translateY(-5px);
+  }
+}
+
+/* Navbar */
+.navbar {
+  background-color: #000;
+  padding: 0.8rem 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.nav-link:hover {
+  color: #f0a500;
+  transform: scale(1.1);
+}
+
+.navbar-brand .logo-img {
+  width: 70px; /* Increased size */
+  height: auto;
+  animation: bounceIn 1.5s infinite;
+}
+
+
+
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+#heroVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Ensures the video stays behind the content */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 14, 14, 0.673); /* Dark overlay */
+  z-index: 1;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+#heroVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Ensures the video stays behind the content */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  z-index: 1;
+}
+
+/* Centered Black Square with 70% Opacity and Animation */
+.centered-square {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%; /* Adjust the size of the square */
+  height: 60%;
+  background-color: rgba(0, 0, 0, 0.7); /* Black color with 70% opacity */
+  z-index: 2; /* Above the overlay but below the content */
+  animation: fadeInSquare 1.5s ease-out, slideIn 1s ease-out;
+}
+
+/* Animation for fading in the square */
+@keyframes fadeInSquare {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* Animation for sliding in the square from top to center */
+@keyframes slideIn {
+  from {
+      top: -20%;
+  }
+  to {
+      top: 50%;
+  }
+}
+
+/* Hero Content */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-buttons a {
+  margin: 0 0.5rem;
+  padding: 0.7rem 2rem;
+  border-radius: 25px;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.hero-buttons a:hover {
+  background-color: #0068f0;
+  color: #000;
+  transform: scale(1.1);
+}
+
+
+/* Best Buys Section */
+.section-padding {
+  padding: 60px 15px;
+}
+
+.bg-image {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 1s ease-in;
+}
+
+.bg-overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.best-buy-wrapper {
+  margin: auto;
+  padding: 1rem;
+  position: relative;
+}
+
+.best-buy-square {
+  padding: 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.carousel .carousel-inner img {
+  max-height: 300px;
+  border-radius: 12px;
+  transition: transform 0.3s;
+}
+
+.carousel .carousel-inner img:hover {
+  transform: scale(1.05);
+}
+
+/* Animated Text List */
+.animated-text-list ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.2rem;
+  line-height: 2;
+  animation: fadeIn 1.5s ease-in;
+}
+
+/* Product Description Section */
+.description h2 {
+  color: #f0a500;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.description p {
+  font-size: 1rem;
+  line-height: 1.8;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Cart Section */
+#cart {
+  background-color: #fff;
+  color: #000;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+#cart .cart-item {
+  background-color: #f8f9fa;
+  animation: fadeIn 1.4s ease-in;
+}
+
+.item-image img {
+  max-height: 150px;
+  transition: transform 0.3s;
+}
+
+.item-image img:hover {
+  transform: scale(1.1);
+}
+
+.item-details h5 {
+  font-size: 1.2rem;
+}
+
+.item-price, .item-total {
+  font-size: 1.1rem;
+}
+
+.item-remove button {
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.item-remove button:hover {
+  background-color: #cc0000;
+  transform: scale(1.1);
+}
+
+/* Buttons */
+.btn {
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #f0a400;
+  color: #000;
+  transform: scale(1.1);
+}
+
+.btn-light:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.sponsors {
+        display: flex; /* Use Flexbox to arrange the items horizontally */
+        justify-content: space-between; /* Distribute the images evenly */
+        gap: 20px; /* Optional: Adjust the space between the images */
+        align-items: center; /* Ensure vertical alignment */
+    }
+
+.sponsor-img {
+        width: 100%; /* Ensure images are responsive */
+        max-width: 80px; /* Set a fixed width to make them uniform */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: contain; /* Ensure images scale properly without distortion */
+    }
+
+
+
+
+/* AOS Animations */
+[data-aos] {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}

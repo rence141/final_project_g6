@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN UP</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/CSS/signup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card mt-5">
+                    <div class="bg-video-container">
+                        <video autoplay muted loop>
+                            <source src="/Project_BroomBroom/Video/neo-retro-motorcycle-moewalls-com.mp4" type="video/mp4">
+                        </video>
+                        <!-- Card Content -->
+                        <div class="section-title">
+                            <section id="Sign-up" class="section-padding">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8 text-center">
+                                        <h1 class="display-4 fw-semibold text-white translate" data-key="create_account">Create an account</h1>
+                                        <div class="line"></div>
+                                        <p class="text-white translate" data-key="account_risk">Create an account at your own risk!</p>
+                                        <form id="signupForm" action="/Project_BroomBroom/PHP/process_signup.php" method="POST" class="row g-3 mt-2">
+                                            <div class="form-group col-lg-6">
+                                                <input type="text" class="form-control" placeholder="First Name" name="FirstName" required>
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <input type="text" class="form-control" placeholder="Last Name" name="LastName" required>
+                                            </div>
+                                            <div class="form-group text-white translate lang">
+                                                <label for="Gender">Gender:</label>
+                                            <select name="Gender" id="Gender" required>
+                                                <option value="" disabled selected>Select your gender</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <input type="email" class="form-control" placeholder="Email" name="Email" required>
+                                            </div>
+                                            <div class="form-group col-lg-6 d-grid">
+                                                <input type="password" class="form-control" placeholder="Password" name="Password" required>
+                                            </div>
+                                            <div class="form-group col-lg-12">
+                                                <input type="text" class="form-control" placeholder="Phone Number" name="Number" required>
+                                            </div>
+                                            <div class="form-group col-lg-12">
+                                                <div class="aligned-items">
+                                                    <label for="language" class="text-white translate" data-key="preferred_language">Preferred Language:</label>
+                                                    <select class="form-control lang" id="language" name="Language" onchange="translatePage()">
+                                                        <option value="en-US">International - English</option>
+                                                        <option value="tl-PH">Filipino - Tagalog</option>
+                                                        <option value="es-ES">Español - Spanish</option>
+                                                        <option value="fr-FR">Français - French</option>
+                                                        <option value="de-DE">Deutsch - German</option>
+                                                        <option value="it-IT">Italiano - Italian</option>
+                                                        <option value="pt-PT">Português - Portuguese</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <labe for="UserType" class="text-white translate" data-key="user_type">User Type</label>
+                                                    <select class="form-control lang" id="Usertype" name="UserType">
+                                                        <option type="radio" value="admin" id="Admin">Admin</option>
+                                                        <option type="radio" value="user" id="User">User</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="login-link d-grid">
+                                                <button type="submit" class="btn btn-minimalist ms-lg-1 translate" data-key="create_account_button">Create account</button>
+                                            </div>
+                                            <div class="form-group col-12 text-center">
+                                                <p><a href="/Project_BroomBroom/redirect/signin.html" class="text-white translate" data-key="have_account">Have an account? Sign In</a></p>
+                                            </div>
+                                        </form>
+                                        <div id="signupResult" class="mt-4"></div> <!-- For showing the result -->
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery and scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Handle the signup form submission
+            $('#signupForm').on('submit', function(e) {
+                e.preventDefault(); // Prevent the default form submission
+    
+                var formData = $(this).serialize(); // Serialize form data
+    
+                $.ajax({
+                    url: '/Project_BroomBroom/PHP/process_signup.php', // PHP script to process signup
+                    method: 'POST',
+                    data: formData,
+                    success: function(response) {
+                        // Check if response is success or an error message
+                        if (response === 'success') {
+                            $('#signupResult').html('<p class="text-success translate" data-key="signup_success">Your account has been created successfully! Redirecting...</p>');
+                            setTimeout(function() {
+                                window.location.href = "/welcome"; // Redirect to the welcome page
+                            }, 2000); // Wait 2 seconds before redirect
+                        } else {
+                            $('#signupResult').html('<p class="text-danger">' + response + '</p>'); // Display error message
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        $('#signupResult').html('<p class="text-danger">There was an error with your request. Please try again.</p>');
+                    }
+                });
+            });
+    
+            translatePage(); // Translate page content on load
+        });
+    
+        // Translation logic
+        const translations = {
+            'en-US': {
+                "create_account": "Create an account",
+                "account_risk": "Create an account at your own risk!",
+                "gender": "Gender:",
+                "preferred_language": "Preferred Language:",
+                "create_account_button": "Create account",
+                "have_account": "Have an account? Sign In",
+                "signup_success": "Your account has been created successfully! Redirecting..."
+            },
+            'tl-PH': {
+                "create_account": "Lumikha ng account",
+                "account_risk": "Lumikha ng account sa iyong sariling peligro!",
+                "gender": "Kasarian:",
+                "preferred_language": "Piniling Wika:",
+                "create_account_button": "Lumikha ng account",
+                "have_account": "May account ka na? Mag-sign in",
+                "signup_success": "Ang iyong account ay matagumpay na nalikha! Nagre-redirect..."
+            },
+            'es-ES': {
+                "create_account": "Crea una cuenta",
+                "account_risk": "¡Crea una cuenta bajo tu propio riesgo!",
+                "gender": "Género:",
+                "preferred_language": "Idioma preferido:",
+                "create_account_button": "Crear cuenta",
+                "have_account": "¿Ya tienes cuenta? Iniciar sesión",
+                "signup_success": "¡Tu cuenta se ha creado con éxito! Redirigiendo..."
+            },
+            'fr-FR': {
+                "create_account": "Créer un compte",
+                "account_risk": "Créez un compte à vos propres risques !",
+                "gender": "Sexe :",
+                "preferred_language": "Langue préférée :",
+                "create_account_button": "Créer un compte",
+                "have_account": "Vous avez un compte ? Se connecter",
+                "signup_success": "Votre compte a été créé avec succès ! Redirection..."
+            },
+            'de-DE': {
+                "create_account": "Ein Konto erstellen",
+                "account_risk": "Erstellen Sie ein Konto auf eigene Gefahr!",
+                "gender": "Geschlecht:",
+                "preferred_language": "Bevorzugte Sprache:",
+                "create_account_button": "Konto erstellen",
+                "have_account": "Hast du ein Konto? Anmelden",
+                "signup_success": "Ihr Konto wurde erfolgreich erstellt! Umleitung..."
+            },
+            'it-IT': {
+                "create_account": "Crea un account",
+                "account_risk": "Crea un account a tuo rischio!",
+                "gender": "Genere:",
+                "preferred_language": "Lingua preferita:",
+                "create_account_button": "Crea account",
+                "have_account": "Hai un account? Accedi",
+                "signup_success": "Il tuo account è stato creato con successo! Reindirizzando..."
+            },
+            'pt-PT': {
+                "create_account": "Criar uma conta",
+                "account_risk": "Crie uma conta por sua conta e risco!",
+                "gender": "Gênero:",
+                "preferred_language": "Idioma preferido:",
+                "create_account_button": "Criar conta",
+                "have_account": "Já tem uma conta? Entrar",
+                "signup_success": "Sua conta foi criada com sucesso! Redirecionando..."
+            }
+        };
+
+        function translatePage() {
+            const language = document.getElementById('language').value;
+            const elements = document.querySelectorAll('.translate');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (translations[language] && translations[language][key]) {
+                    el.textContent = translations[language][key];
+                }
+            });
+        }
+    </script>
+</body>
+</html>

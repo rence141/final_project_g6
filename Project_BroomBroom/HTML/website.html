@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BroomBroom</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css">
+    
+    <link rel="stylesheet" href="/CSS/styles.css"> <!--Custom link-->
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target=".navbar">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand text-uppercase" href="#">
+                <img src="/img/imgs/Screenshot 2024-12-02 210822.png" alt="BroomBroom Logo" class="logo-img">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-light active" href="/Project_BroomBroom/redirect/landing_page.html">Landing Page</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="/Project_BroomBroom/redirect/AboutUs.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="/Project_BroomBroom/redirect/signup.html">Sign Up</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="/Project_BroomBroom/redirect/signin.html">Sign In</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section min-vh-100 d-flex align-items-center text-center position-relative">
+        <!-- Background Video -->
+        <video autoplay muted loop id="heroVideo">
+            <source src="/Project_BroomBroom/Video/Night Lovell - Polozhenie (Yamaha R1M Night Ride).mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <div class="hero-overlay"></div>
+        <div class="container position-relative z-index-2">
+            <div class="hero-content">
+                <h1 class="display-1 fw-bold text-uppercase">Shop Now!</h1>
+                <h2 class="mt-3 mb-4">Exclusive deals on the latest rides!</>
+                <div class="line mb-3"></div>
+                <div class="hero-buttons">
+                    <a href="/Project_BroomBroom/redirect/AboutUs.html" class="btn btn-dark text-light">Explore</a>
+                    <a href="/Project_BroomBroom/redirect/signin.html" class="btn btn-light text-dark">View Cart</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop" class="section-padding bg-image" style="background-image: url('/img/imgs/462561539_876501701304928_6281359818426048351_n.png'); background-size: cover; background-position: center;">
+        <div class="bg-overlay" style="background-color: rgba(0,0,0,0.8); padding: 50px 0;">
+            <div class="container">
+                <div class="row text-center">
+                    <h1 class="display-4 fw-semibold text-white">Best Buys</h1>
+                    <p class="text-blue">Limited Edition! Add to cart now!</p>
+                </div>
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-lg-6">
+                        <!-- Swiper Container -->
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="/img/imgs/462561539_876501701304928_6281359818426048351_n.png" class="d-block w-100" alt="Motorcycle 1">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/img/imgs/466468761_430401696600240_6021145199942566935_n.png" class="d-block w-100" alt="Motorcycle 2">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/img/imgs/462652086_653906043728142_8929647855652534265_n.png" class="d-block w-100" alt="Motorcycle 3">
+                                </div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-white">
+                        <ul>
+                            <li>Top Speed: 200 mph</li>
+                            <li>Limited Edition Model</li>
+                            <li>Price: $30,000</li>
+                            <li>Available Now!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Section -->
+    <footer class="footer bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Phone: <a href="tel:+1234567890" class="text-light">+63 (9672479726)</a></p>
+                    <p>Email: <a href="mailto:info@broombroom.com" class="text-light">BroomBroom.com</a></p>
+                </div>
+                    <div class="col-md-4">
+                        <h5>Sponsors</h5>
+                        <div class="sponsors">
+                            <a href="https://ducati.com.ph/"><img src="/img/imgs/ducati_id.png" alt="Ducati" class="sponsor-img"></a>
+                            <a href="https://www.ferrari.com/en-EN"><img src="/img/imgs/OIP (7).jpeg" alt="Ferrari" class="sponsor-img"></a>
+                            <a href="https://www.yamaha-motor.com.ph/"><img src="/img/imgs/yamaha-logo-yny.png" alt="Yamaha" class="sponsor-img"></a>
+                        </div>
+                    </div>
+                    
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/Project_BroomBroom/redirect/FAQ.html" class="text-light">FAQs</a></li>
+                        <li><a href="/Project_BroomBroom/redirect/CookiePolicy.html" class="text-light">Cookie Policy</a></li>
+                        <li><a href="/Project_BroomBroom/redirect/Terms&Service.html" class="text-light">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <p>&copy; 2024 BroomBroom. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!--Scroll Limiter-->
+    <script>
+        // Define sections to scroll to
+        const sections = document.querySelectorAll('section');
+        let isScrolling = false; // Flag to prevent multiple scrolls at once
+    
+        // Function to scroll to a section
+        function scrollToSection(sectionIndex) {
+            if (sectionIndex >= 0 && sectionIndex < sections.length) {
+                sections[sectionIndex].scrollIntoView({
+                    behavior: 'smooth', 
+                    block: 'start'
+                });
+            }
+        }
+    
+        // Event listener for wheel scroll
+        window.addEventListener('wheel', function(event) {
+            if (isScrolling) return; // Prevent multiple scroll events
+    
+            isScrolling = true; // Set the flag to prevent further scroll during the transition
+            const currentSectionIndex = [...sections].findIndex(section => section.getBoundingClientRect().top >= 0);
+    
+            if (event.deltaY > 0) {
+                // Scroll down (move to the next section)
+                if (currentSectionIndex < sections.length - 1) {
+                    scrollToSection(currentSectionIndex + 1);
+                }
+            } else {
+                // Scroll up (move to the previous section)
+                if (currentSectionIndex > 0) {
+                    scrollToSection(currentSectionIndex - 1);
+                }
+            }
+    
+            // Reset the scrolling flag after the scroll ends
+            setTimeout(() => {
+                isScrolling = false;
+            }, 1000); // Adjust this time to match the duration of the scroll effect
+        });
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script>
+    var swiper = new Swiper('.mySwiper', {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true, // Ensures the bullets are clickable
+            type: 'bullets', // Specifies the pagination type as bullets
+        },
+        autoplay: {
+            delay: 3000, // Time in milliseconds between slides (3 seconds)
+            disableOnInteraction: false, // Autoplay will continue after user interaction
+        },
+        loop: true, // Ensures the slides loop infinitely
+    });
+</script>
+
+<script>
+    var swiper = new Swiper('.mySwiper', {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            type: 'bullets',
+        },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        loop: true,
+        on: {
+            slideChange: function () {
+                // Get the current slide
+                const currentSlide = this.slides[this.activeIndex];
+                const imgUrl = currentSlide.querySelector('img').src;
+                
+                // Change the background image of the #shop section
+                document.getElementById('shop').style.backgroundImage = `url(${imgUrl})`;
+            }
+        }
+    });
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
